@@ -161,9 +161,9 @@ The dashboard provides:
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/cart-rescue-ai.git
+git clone https://github.com/SHAIKZILANI/AI_HACKATHON.git
 
-cd cart-rescue-ai
+cd AI_HACKATHON
 ```
 
 ---
@@ -221,23 +221,7 @@ npm run dev
 
 ---
 
-# 📸 Screenshots
 
-Dashboard
-
-(Add Screenshot)
-
-Prediction Screen
-
-(Add Screenshot)
-
-Analytics
-
-(Add Screenshot)
-
-Recommendation Panel
-
-(Add Screenshot)
 
 ---
 
@@ -266,17 +250,10 @@ Evaluation results will be updated after training on the final dataset.
 
 ---
 
-# 👥 Team
 
-| Member | Responsibility |
-|----------|---------------|
-| Member 1 | Backend Development |
-| Member 2 | Frontend Development |
-| Member 3 | Machine Learning |
-| Member 4 | Documentation & Presentation |
 
 ---
 
-# 📄 License
+#  License
 
 This project is licensed under the MIT License.
