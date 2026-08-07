@@ -175,13 +175,11 @@ docker-compose up --build
 ```
 
 Available Services
-
-| Service | URL |
-|----------|-----|
-| Frontend | http://localhost |
-| Backend | http://localhost:8080 |
-| Swagger | http://localhost:8080/swagger-ui/index.html |
-| ML Service | http://localhost:8000/docs |
+Service	Updated Local URL
+Frontend Dashboard	http://localhost:3000 
+Backend REST API	http://localhost:8081/api/v1
+Swagger API Docs	http://localhost:8081/api/v1/swagger-ui.html	
+ML Service Docs	http://localhost:8000/docs
 
 ---
 
