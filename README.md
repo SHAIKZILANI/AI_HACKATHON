@@ -4,7 +4,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 CartRescue AI is a full-stack application built to reduce shopping cart abandonment using customer behavior analytics and machine learning.
 
@@ -14,7 +14,7 @@ The objective is to improve conversion rates while avoiding unnecessary discount
 
 ---
 
-# 🚀 Features
+#  Features
 
 - Predicts cart abandonment risk in real time
 - Customer intent classification
@@ -28,7 +28,7 @@ The objective is to improve conversion rates while avoiding unnecessary discount
 
 ---
 
-# 💡 Customer Intent Classification
+#  Customer Intent Classification
 
 Rather than classifying every incomplete purchase as abandonment, CartRescue AI identifies customer intent.
 
@@ -46,7 +46,7 @@ This helps businesses respond more accurately and avoid unnecessary promotional 
 
 ---
 
-# 🏗 System Architecture
+#  System Architecture
 
 ```mermaid
 flowchart LR
@@ -66,7 +66,7 @@ E --> F[SHAP Explainability]
 
 ---
 
-# ⚙️ Tech Stack
+#  Tech Stack
 
 | Layer | Technology |
 |--------|------------|
@@ -80,7 +80,7 @@ E --> F[SHAP Explainability]
 
 ---
 
-# 📂 Dataset
+#  Dataset
 
 The application uses customer activity collected from the following datasets:
 
@@ -96,7 +96,7 @@ These datasets are used to generate behavioral features such as session duration
 
 ---
 
-# 🧠 Machine Learning Pipeline
+#  Machine Learning Pipeline
 
 The prediction pipeline consists of the following stages:
 
@@ -112,7 +112,7 @@ The prediction service is exposed through a FastAPI REST endpoint and integrated
 
 ---
 
-# 📁 Project Structure
+#  Project Structure
 
 ```
 cart-rescue-ai/
@@ -130,7 +130,7 @@ cart-rescue-ai/
 
 ---
 
-# 📊 Dashboard
+#  Dashboard
 
 The dashboard provides:
 
@@ -144,7 +144,7 @@ The dashboard provides:
 
 ---
 
-# 🔗 API Endpoints
+#  API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -156,7 +156,7 @@ The dashboard provides:
 
 ---
 
-# 🚀 Getting Started
+#  Getting Started
 
 ## Clone Repository
 
@@ -225,7 +225,7 @@ npm run dev
 
 ---
 
-# 📈 Model Evaluation
+#  Model Evaluation
 
 The model is evaluated using:
 
@@ -239,7 +239,7 @@ Evaluation results will be updated after training on the final dataset.
 
 ---
 
-# 🔮 Future Improvements
+#  Future Improvements
 
 - Real-time event streaming
 - Personalized coupon generation
