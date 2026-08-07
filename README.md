@@ -174,12 +174,14 @@ cd AI_HACKATHON
 docker-compose up --build
 ```
 
-Available Services
-Service	Updated Local URL
-Frontend Dashboard	http://localhost:3000 
-Backend REST API	http://localhost:8081/api/v1
-Swagger API Docs	http://localhost:8081/api/v1/swagger-ui.html	
-ML Service Docs	http://localhost:8000/docs
+### Available Services
+
+| Service | URL |
+|---------|-----|
+| Frontend Dashboard | http://localhost:3000 |
+| Backend REST API | http://localhost:8081/api/v1 |
+| Swagger API Documentation | http://localhost:8081/swagger-ui/index.html |
+| Machine Learning API | http://localhost:8000/docs |
 
 ---
 
