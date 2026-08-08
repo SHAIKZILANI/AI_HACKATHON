@@ -1,115 +1,159 @@
-# 🛒 CartRescue AI — Enterprise Cart Abandonment & Recovery SaaS Platform
+# 🛒 CartRescue AI
 
-> **An intelligent, real-time cart abandonment prediction and margin-bounded recovery platform powered by XGBoost ML, SHAP Explainable AI, Smart Policy Rules, and AI Hyper-Personalized Messaging.**
+### Intelligent Cart Abandonment Prediction & Recovery Platform
 
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.3-green.svg)](https://spring.io/projects/spring-boot)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.109.2-009688.svg)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-2.0-orange.svg)](https://xgboost.readthedocs.io/)
-[![SHAP](https://img.shields.io/badge/SHAP-0.44-purple.svg)](https://shap.readthedocs.io/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+> An AI-powered platform that predicts shopping cart abandonment, identifies customer intent, and recommends personalized recovery actions to improve conversion rates and reduce revenue loss.
 
 ---
 
-##  Key Highlights & New Capabilities
+# Project Overview
 
--  **XGBoost ML Risk Scoring (`ROC-AUC 0.9420`)**: Real-time probability scoring of live clickstream shopper sessions.
--  **Explainable AI (SHAP Diagnostics)**: Transparent feature attribution breaking down *why* a customer is leaving.
-- **Live Auto-Streaming Feed (5s)**: Real-time session ingestion with authentic Indian shopper profiles.
--  **WhatsApp & Omnichannel Dispatches**: Direct 1-Click WhatsApp payment retry link generator (`wa.me/+91...`), SMS, Email, and On-Site Exit Popups.
--  **Smart Policy Rules Engine**: Margin-bounded automated rules preventing over-discounting and protecting profit margins.
--  **Live E-Commerce Storefront Simulator (`/storefront`)**: Interactive playground to simulate gateway timeouts and exit-intent triggers.
--  **AI Hyper-Personalized Copywriter (`/ai-copywriter`)**: Intent-driven recovery message generator.
--  **Stripe/Vercel Enterprise UI Design**: High-contrast Light & Dark Mode theme engine.
+Shopping cart abandonment is a common challenge in e-commerce, where customers add products to their cart but leave before completing their purchase. Businesses often respond by offering discounts to every customer, which increases marketing costs and reduces profit margins without understanding the real reason behind the abandonment.
+
+CartRescue AI helps solve this problem by analyzing customer sessions, clickstream events, payment behavior, and purchase history. The platform predicts the likelihood of cart abandonment, identifies the customer's intent, and provides actionable recommendations that help businesses recover potential sales while improving the overall shopping experience.
 
 ---
 
-##  System Architecture
+# Our Solution
+
+CartRescue AI combines machine learning, behavioral analytics, and a modern analytics dashboard into a single platform.
+
+The solution:
+
+- Predicts cart abandonment risk using an XGBoost machine learning model.
+- Explains every prediction using SHAP Explainable AI.
+- Identifies customer intent based on browsing and checkout behavior.
+- Recommends a single personalized recovery action such as payment retry, reminder notification, free shipping, or a targeted discount.
+- Provides a real-time dashboard for monitoring customer activity, predictions, and recovery performance.
+
+Instead of applying the same recovery strategy to every customer, CartRescue AI helps businesses make data-driven decisions by selecting the most appropriate action for each individual shopper.
+
+---
+
+# Key Highlights
+
+- **XGBoost Risk Prediction** for real-time cart abandonment analysis.
+- **SHAP Explainable AI** to provide transparent prediction insights.
+- **Live Session Monitoring** with continuous customer activity tracking.
+- **Customer Intent Classification** based on shopping behavior.
+- **Smart Recommendation Engine** for personalized recovery actions.
+- **Interactive Analytics Dashboard** with real-time business insights.
+- **WhatsApp, Email, and SMS Recovery Support** for customer engagement.
+- **Modern Responsive Interface** built with React and Material UI.
+
+---
+
+# System Architecture
 
 ```mermaid
 flowchart LR
 
-A[" React Frontend (Port 3000)"] -->|REST API & JWT| B[" Spring Boot Backend (Port 8081)"]
-B -->|JDBC JPA| C[(" MySQL Database (cartrescue_db)")]
-B -->|FastAPI Predict Endpoint| D[" Python ML Engine (Port 8000)"]
-D -->|SHAP TreeExplainer| E[" XGBoost Model v2.0"]
-E -->|Recovery Actions| F[" WhatsApp / SMS / Exit Popups"]
+A["React Frontend (Port 3000)"] -->|REST API| B["Spring Boot Backend (Port 8081)"]
+
+B -->|JPA/Hibernate| C[("MySQL Database")]
+
+B -->|REST API| D["Python ML Service (Port 8000)"]
+
+D --> E["XGBoost + SHAP"]
+
+E --> F["Recommendation Engine"]
 ```
 
 ---
 
-##  Technology Stack
+# Technology Stack
 
 | Layer | Technology |
-|---|---|
-| **Frontend** | React 18, Vite, Tailwind CSS, Material UI, Lucide React, Chart.js |
-| **Backend API** | Java 21, Spring Boot 3.2.3, Spring Security, JPA/Hibernate |
-| **Machine Learning** | Python 3.11, FastAPI, XGBoost 2.0, SHAP 0.44, Scikit-learn, Pandas |
-| **Database** | MySQL 8.0 (`cartrescue_db`) |
-| **Authentication** | JWT (JSON Web Tokens) with Role-Based Access Control |
-| **Delivery Channels**| WhatsApp Web API, Twilio SMS, Email, Exit-Intent Overlays |
+|-------|------------|
+| Frontend | React, Vite, Tailwind CSS, Material UI, Chart.js |
+| Backend | Java 21, Spring Boot, Spring Security, Spring Data JPA |
+| Machine Learning | Python, FastAPI, XGBoost, SHAP, Scikit-learn |
+| Database | MySQL |
+| Authentication | JWT |
+| Deployment | Docker, Docker Compose |
 
 ---
 
-##  Shopper Intent Categories & Bounded Policies
+# Customer Intent Categories
 
-Rather than treating every drop-off as a simple abandoned cart, **CartRescue AI** classifies shopper intent into 5 distinct profiles:
-
-| Intent Category | Behavioral Pattern | Recommended Bounded Policy |
-|---|---|---|
-| **Payment Gateway Failure** | Gateway timeout / 2FA drop | 1-Click WhatsApp UPI Payment Retry Link |
-| **High Price Sensitivity** | Re-visited cart 3+ times | Bounded 15% Discount Code (`RESCUE15`) |
-| **Delivery Concern** | Checked shipping rates repeatedly | Priority Free Express Shipping Waiver |
-| **Save For Later** | Added high-value items, low urgency | Gentle Stock Lock Alert |
-| **Window Shopper** | Short duration browsing | Low-friction Exit-Intent Nudge |
+| Intent | Recommended Action |
+|---------|--------------------|
+| Payment Issue | Retry Payment |
+| Price Sensitive | Offer Discount |
+| Delivery Concern | Free Shipping |
+| Buy Later | Reminder Notification |
+| Window Shopper | Exit Intent Prompt |
 
 ---
 
-##  Quick Start Guide
+# Quick Start
 
-### 1. Clone the Repository
+## Clone Repository
+
 ```bash
 git clone https://github.com/SHAIKZILANI/AI_HACKATHON.git
+
 cd AI_HACKATHON
 ```
 
-### 2. Launch Services Locally
+## Backend
 
-#### Backend (Spring Boot — Port 8081)
 ```bash
 cd backend
+
 mvn spring-boot:run
 ```
 
-#### ML Engine (FastAPI — Port 8000)
+## Machine Learning Service
+
 ```bash
 cd ml-service
+
 pip install -r requirements.txt
+
 python main.py
 ```
 
-#### Frontend (React Vite — Port 3000)
+## Frontend
+
 ```bash
 cd frontend
+
 npm install
+
 npm run dev
 ```
 
 ---
 
-##  Application URLs
+# Application URLs
 
-- **Executive Dashboard**: `http://localhost:3000/dashboard`
-- **Live Risk Stream**: `http://localhost:3000/predictions`
-- **Deep Analytics**: `http://localhost:3000/analytics`
-- **AI Copywriter**: `http://localhost:3000/ai-copywriter`
-- **Storefront Simulator**: `http://localhost:3000/storefront`
-- **Smart Policy Rules**: `http://localhost:3000/policy-rules`
-- **Spring Boot REST API**: `http://localhost:8081/api/v1`
-- **Python ML API Docs**: `http://localhost:8000/docs`
+| Service | URL |
+|---------|-----|
+| Frontend Dashboard | http://localhost:3000/dashboard |
+| Executive Dashboard | http://localhost:3000/dashboard |
+| Live Risk Stream | http://localhost:3000/predictions |
+| Deep Analytics | http://localhost:3000/analytics |
+| AI Copywriter | http://localhost:3000/ai-copywriter |
+| Storefront Simulator | http://localhost:3000/storefront |
+| Policy Rules | http://localhost:3000/policy-rules |
+| Backend API | http://localhost:8081/api/v1 |
+| Swagger Documentation | http://localhost:8081/swagger-ui/index.html |
+| ML API Documentation | http://localhost:8000/docs |
 
 ---
 
-##  License
+# Future Enhancements
 
-Distributed under the MIT License. See `LICENSE` for details.
+- Real-time event streaming
+- Dynamic coupon optimization
+- Multi-language support
+- Cloud deployment
+- Mobile application
+- Predictive customer segmentation
+
+---
+
+# License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
