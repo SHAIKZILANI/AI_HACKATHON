@@ -24,20 +24,6 @@
 
 ---
 
-## 🏗️ System Architecture
-
-```mermaid
-flowchart LR
-
-A["🛍️ React Frontend (Port 3000)"] -->|REST API & JWT| B["🛡️ Spring Boot Backend (Port 8081)"]
-B -->|JDBC JPA| C[("🛢️ MySQL Database (cartrescue_db)")]
-B -->|FastAPI Predict Endpoint| D["🐍 Python ML Engine (Port 8000)"]
-D -->|SHAP TreeExplainer| E["⚡ XGBoost Model v2.0"]
-E -->|Recovery Actions| F["💬 WhatsApp / SMS / Exit Popups"]
-```
-
----
-
 ## 🛠️ Technology Stack
 
 | Layer | Technology |
