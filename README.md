@@ -11,20 +11,34 @@
 
 ---
 
-## 🌟 Key Highlights & New Capabilities
+##  Key Highlights & New Capabilities
 
-- 🧠 **XGBoost ML Risk Scoring (`ROC-AUC 0.9420`)**: Real-time probability scoring of live clickstream shopper sessions.
-- 🔍 **Explainable AI (SHAP Diagnostics)**: Transparent feature attribution breaking down *why* a customer is leaving.
-- ⚡ **Live Auto-Streaming Feed (5s)**: Real-time session ingestion with authentic Indian shopper profiles.
-- 💬 **WhatsApp & Omnichannel Dispatches**: Direct 1-Click WhatsApp payment retry link generator (`wa.me/+91...`), SMS, Email, and On-Site Exit Popups.
-- 🛡️ **Smart Policy Rules Engine**: Margin-bounded automated rules preventing over-discounting and protecting profit margins.
-- 🛍️ **Live E-Commerce Storefront Simulator (`/storefront`)**: Interactive playground to simulate gateway timeouts and exit-intent triggers.
-- 🤖 **AI Hyper-Personalized Copywriter (`/ai-copywriter`)**: Intent-driven recovery message generator.
-- 🌗 **Stripe/Vercel Enterprise UI Design**: High-contrast Light & Dark Mode theme engine.
+-  **XGBoost ML Risk Scoring (`ROC-AUC 0.9420`)**: Real-time probability scoring of live clickstream shopper sessions.
+-  **Explainable AI (SHAP Diagnostics)**: Transparent feature attribution breaking down *why* a customer is leaving.
+- **Live Auto-Streaming Feed (5s)**: Real-time session ingestion with authentic Indian shopper profiles.
+-  **WhatsApp & Omnichannel Dispatches**: Direct 1-Click WhatsApp payment retry link generator (`wa.me/+91...`), SMS, Email, and On-Site Exit Popups.
+-  **Smart Policy Rules Engine**: Margin-bounded automated rules preventing over-discounting and protecting profit margins.
+-  **Live E-Commerce Storefront Simulator (`/storefront`)**: Interactive playground to simulate gateway timeouts and exit-intent triggers.
+-  **AI Hyper-Personalized Copywriter (`/ai-copywriter`)**: Intent-driven recovery message generator.
+-  **Stripe/Vercel Enterprise UI Design**: High-contrast Light & Dark Mode theme engine.
 
 ---
 
-## 🛠️ Technology Stack
+##  System Architecture
+
+```mermaid
+flowchart LR
+
+A[" React Frontend (Port 3000)"] -->|REST API & JWT| B[" Spring Boot Backend (Port 8081)"]
+B -->|JDBC JPA| C[(" MySQL Database (cartrescue_db)")]
+B -->|FastAPI Predict Endpoint| D[" Python ML Engine (Port 8000)"]
+D -->|SHAP TreeExplainer| E[" XGBoost Model v2.0"]
+E -->|Recovery Actions| F[" WhatsApp / SMS / Exit Popups"]
+```
+
+---
+
+##  Technology Stack
 
 | Layer | Technology |
 |---|---|
@@ -37,7 +51,7 @@
 
 ---
 
-## 🎯 Shopper Intent Categories & Bounded Policies
+##  Shopper Intent Categories & Bounded Policies
 
 Rather than treating every drop-off as a simple abandoned cart, **CartRescue AI** classifies shopper intent into 5 distinct profiles:
 
@@ -51,7 +65,7 @@ Rather than treating every drop-off as a simple abandoned cart, **CartRescue AI*
 
 ---
 
-## ⚡ Quick Start Guide
+##  Quick Start Guide
 
 ### 1. Clone the Repository
 ```bash
@@ -83,7 +97,7 @@ npm run dev
 
 ---
 
-## 🌐 Application URLs
+##  Application URLs
 
 - **Executive Dashboard**: `http://localhost:3000/dashboard`
 - **Live Risk Stream**: `http://localhost:3000/predictions`
@@ -96,6 +110,6 @@ npm run dev
 
 ---
 
-## 📜 License
+##  License
 
 Distributed under the MIT License. See `LICENSE` for details.
