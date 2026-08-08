@@ -1,28 +1,33 @@
 import React from 'react';
 
-const MetricCard = ({ title, value, subtitle, icon: Icon, trend, color = 'sky' }) => {
-  const colorMap = {
-    sky: 'from-sky-500/20 to-sky-600/5 text-sky-400 border-sky-500/20',
-    rose: 'from-rose-500/20 to-rose-600/5 text-rose-400 border-rose-500/20',
-    emerald: 'from-emerald-500/20 to-emerald-600/5 text-emerald-400 border-emerald-500/20',
-    amber: 'from-amber-500/20 to-amber-600/5 text-amber-400 border-amber-500/20',
-  };
-
+const MetricCard = ({ title, value, subtitle, icon: Icon, trend }) => {
   return (
-    <div className={`p-5 rounded-2xl bg-gradient-to-b border glass-panel ${colorMap[color]} shadow-lg`}>
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{title}</span>
-        {Icon && <Icon className="w-5 h-5 opacity-80" />}
+    <div className="p-6 rounded-2xl bg-theme-card border border-theme hover:border-[#3B82F6]/50 hover:scale-[1.02] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 h-full flex flex-col justify-between shadow-sm">
+      <div>
+        <div className="flex items-center justify-between">
+          <span className="text-sm font-semibold text-theme-secondary">{title}</span>
+          {Icon && (
+            <div className="p-2 rounded-xl bg-theme-secondary border border-theme text-[#3B82F6]">
+              <Icon className="w-5 h-5 stroke-[1.75]" />
+            </div>
+          )}
+        </div>
+
+        <div className="mt-4 flex items-baseline justify-between">
+          <h3 className="text-4xl font-bold text-theme-primary font-sans tracking-tight">{value}</h3>
+          {trend && (
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/30">
+              {trend}
+            </span>
+          )}
+        </div>
       </div>
-      <div className="mt-3 flex items-baseline justify-between">
-        <h3 className="text-2xl font-bold text-white tracking-tight">{value}</h3>
-        {trend && (
-          <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-800 text-emerald-400 border border-slate-700">
-            {trend}
-          </span>
-        )}
-      </div>
-      {subtitle && <p className="text-xs text-slate-400 mt-1">{subtitle}</p>}
+
+      {subtitle && (
+        <p className="text-xs text-theme-secondary font-medium mt-3 border-t border-theme opacity-80 pt-3">
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 };

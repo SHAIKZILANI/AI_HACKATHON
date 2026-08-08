@@ -8,6 +8,9 @@ import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import PredictionsPage from './pages/PredictionsPage';
 import AnalyticsPage from './pages/AnalyticsPage';
+import GeminiAISpecialistPage from './pages/GeminiAISpecialistPage';
+import StorefrontPage from './pages/StorefrontPage';
+import PolicyRulesPage from './pages/PolicyRulesPage';
 
 const ProtectedLayout = () => {
   const { user, loading } = useAuth();
@@ -34,6 +37,10 @@ const ProtectedLayout = () => {
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/predictions" element={<PredictionsPage />} />
             <Route path="/analytics" element={<AnalyticsPage />} />
+            <Route path="/policy-rules" element={<PolicyRulesPage />} />
+            <Route path="/ai-copywriter" element={<GeminiAISpecialistPage />} />
+            <Route path="/gemini-ai" element={<GeminiAISpecialistPage />} />
+            <Route path="/storefront" element={<StorefrontPage />} />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </main>

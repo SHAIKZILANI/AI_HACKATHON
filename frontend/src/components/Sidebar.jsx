@@ -1,19 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, BarChart3, BrainCircuit, Activity, Settings, HelpCircle } from 'lucide-react';
+import { LayoutDashboard, BarChart3, BrainCircuit, Activity, Sparkles, ShoppingCart, Sliders } from 'lucide-react';
 
 const Sidebar = () => {
   const navItems = [
     { label: 'Executive Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { label: 'Live Risk Stream', path: '/predictions', icon: BrainCircuit },
     { label: 'Deep Analytics', path: '/analytics', icon: BarChart3 },
+    { label: 'Smart Policy Rules', path: '/policy-rules', icon: Sliders },
+    { label: 'AI Copywriter Specialist', path: '/ai-copywriter', icon: Sparkles, badge: 'AI' },
+    { label: 'Live Storefront Demo', path: '/storefront', icon: ShoppingCart, badge: 'LIVE' },
   ];
 
   return (
-    <aside className="w-64 border-r border-slate-800 bg-slate-900/50 min-h-[calc(100vh-4rem)] p-4 flex flex-col justify-between">
+    <aside className="w-60 bg-theme-sidebar border-r border-theme min-h-[calc(100vh-4rem)] p-4 flex flex-col justify-between shrink-0 transition-colors duration-200">
       <div className="space-y-6">
         <div className="px-3">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Navigation</p>
+          <p className="text-[11px] font-bold text-theme-secondary uppercase tracking-wider">Navigation</p>
         </div>
         <nav className="space-y-1">
           {navItems.map((item) => {
@@ -23,27 +26,38 @@ const Sidebar = () => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition ${
+                  `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? 'bg-sky-500/10 text-sky-400 border border-sky-500/20'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                      ? 'bg-[#3B82F6] text-white font-semibold shadow-sm'
+                      : 'text-theme-secondary hover:text-theme-primary hover:bg-theme-card'
                   }`
                 }
               >
-                <Icon className="w-5 h-5" />
-                {item.label}
+                {({ isActive }) => (
+                  <>
+                    <Icon className={`w-5 h-5 stroke-[1.75] ${isActive ? 'text-white' : 'text-theme-secondary'}`} />
+                    <span className="flex-1 truncate">{item.label}</span>
+                    {item.badge && (
+                      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${isActive ? 'bg-white/20 text-white' : 'bg-[#3B82F6]/20 text-[#3B82F6]'}`}>
+                        {item.badge}
+                      </span>
+                    )}
+                  </>
+                )}
               </NavLink>
             );
           })}
         </nav>
       </div>
 
-      <div className="p-3 bg-slate-800/40 border border-slate-800 rounded-xl">
-        <div className="flex items-center gap-2 text-xs font-medium text-emerald-400">
-          <Activity className="w-4 h-4 animate-pulse" />
+      <div className="p-4 rounded-2xl bg-theme-card border border-theme space-y-2">
+        <div className="flex items-center gap-2 text-xs font-semibold text-[#10B981]">
+          <Activity className="w-4 h-4 stroke-[1.75]" />
           <span>ML Engine: ONLINE</span>
         </div>
-        <p className="text-[11px] text-slate-400 mt-1">XGBoost v2.0 + SHAP Explainability Engine Active</p>
+        <p className="text-xs text-theme-secondary leading-relaxed">
+          XGBoost v2.0 & SHAP active.
+        </p>
       </div>
     </aside>
   );

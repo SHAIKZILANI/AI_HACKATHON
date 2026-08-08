@@ -2,14 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Enterprise Light Mode Tokens */
+  --bg-main: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-navbar: #FFFFFF;
+  --bg-sidebar: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --border-color: #CBD5E1;
+  --hover-bg: #E2E8F0;
+  --accent-primary: #2563EB;
+}
+
+.dark {
+  /* Enterprise Dark Mode Tokens */
+  --bg-main: #0F172A;
+  --bg-secondary: #111827;
+  --bg-card: #1E293B;
+  --bg-navbar: #0B1220;
+  --bg-sidebar: #111827;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --border-color: #334155;
+  --hover-bg: #1E293B;
+  --accent-primary: #3B82F6;
+}
+
 @layer base {
   body {
-    @apply bg-slate-900 text-slate-100 font-sans antialiased min-h-screen;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    @apply font-sans antialiased min-h-screen tracking-tight transition-colors duration-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
   }
 }
 
-.glass-panel {
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Enterprise Design Utility Classes with Dynamic Theme Variables */
+.bg-theme-main {
+  background-color: var(--bg-main);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-theme-card {
+  background-color: var(--bg-card);
+}
+
+.bg-theme-navbar {
+  background-color: var(--bg-navbar);
+}
+
+.bg-theme-sidebar {
+  background-color: var(--bg-sidebar);
+}
+
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.border-theme {
+  border-color: var(--border-color);
+}
+
+.card-enterprise {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-enterprise:hover {
+  transform: scale(1.02) translateY(-2px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 0.625rem 1.25rem;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.9);
+}
+
+.btn-secondary {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 0.625rem 1.25rem;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--text-secondary);
+}
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
 }

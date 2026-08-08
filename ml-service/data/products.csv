@@ -1,0 +1,51 @@
+product_id,sku,name,category,price,stock_quantity,rating_avg
+1,APPA-001,Premium Appare Product 1,Apparel,29947.02,153,4.24
+2,HOME-002,Premium Home Appliance Product 2,Home Appliances,8878.17,128,4.81
+3,FOOT-003,Premium Footwea Product 3,Footwear,15751.54,113,4.27
+4,FOOT-004,Premium Footwea Product 4,Footwear,12764.76,57,4.39
+5,HOME-005,Premium Home Appliance Product 5,Home Appliances,5973.44,111,4.09
+6,ELEC-006,Premium Electronic Product 6,Electronics,33938.58,198,3.89
+7,BEAU-007,Premium Beaut Product 7,Beauty,23088.42,60,3.99
+8,HOME-008,Premium Home Appliance Product 8,Home Appliances,27139.29,161,3.7
+9,HOME-009,Premium Home Appliance Product 9,Home Appliances,33952.76,109,4.18
+10,ELEC-010,Premium Electronic Product 10,Electronics,8490.19,190,3.61
+11,FOOT-011,Premium Footwea Product 11,Footwear,6189.77,62,4.28
+12,APPA-012,Premium Appare Product 12,Apparel,11993.35,190,4.74
+13,ELEC-013,Premium Electronic Product 13,Electronics,15251.23,157,3.87
+14,ELEC-014,Premium Electronic Product 14,Electronics,21714.55,147,4.56
+15,FOOT-015,Premium Footwea Product 15,Footwear,6095.52,103,3.75
+16,APPA-016,Premium Appare Product 16,Apparel,1571.54,60,4.6
+17,HOME-017,Premium Home Appliance Product 17,Home Appliances,23333.68,39,4.21
+18,APPA-018,Premium Appare Product 18,Apparel,29592.56,181,4.71
+19,HOME-019,Premium Home Appliance Product 19,Home Appliances,20611.38,145,4.8
+20,APPA-020,Premium Appare Product 20,Apparel,7441.9,162,3.67
+21,HOME-021,Premium Home Appliance Product 21,Home Appliances,9659.58,166,3.59
+22,HOME-022,Premium Home Appliance Product 22,Home Appliances,18731.11,160,4.9
+23,ELEC-023,Premium Electronic Product 23,Electronics,1664.26,99,3.68
+24,APPA-024,Premium Appare Product 24,Apparel,15990.76,127,4.9
+25,BEAU-025,Premium Beaut Product 25,Beauty,11269.93,54,4.26
+26,APPA-026,Premium Appare Product 26,Apparel,1741.62,167,3.72
+27,BEAU-027,Premium Beaut Product 27,Beauty,34536.05,31,4.95
+28,FOOT-028,Premium Footwea Product 28,Footwear,470.42,90,4.93
+29,ELEC-029,Premium Electronic Product 29,Electronics,22477.1,71,4.8
+30,APPA-030,Premium Appare Product 30,Apparel,16078.93,39,4.27
+31,FOOT-031,Premium Footwea Product 31,Footwear,17262.47,105,4.5
+32,FOOT-032,Premium Footwea Product 32,Footwear,5145.04,140,3.54
+33,HOME-033,Premium Home Appliance Product 33,Home Appliances,10984.48,117,4.56
+34,BEAU-034,Premium Beaut Product 34,Beauty,7303.52,45,4.51
+35,BEAU-035,Premium Beaut Product 35,Beauty,33955.92,108,3.64
+36,HOME-036,Premium Home Appliance Product 36,Home Appliances,23638.97,57,4.17
+37,HOME-037,Premium Home Appliance Product 37,Home Appliances,30424.4,172,3.77
+38,BEAU-038,Premium Beaut Product 38,Beauty,24333.81,187,4.76
+39,FOOT-039,Premium Footwea Product 39,Footwear,33078.06,152,4.52
+40,FOOT-040,Premium Footwea Product 40,Footwear,17551.46,135,4.43
+41,APPA-041,Premium Appare Product 41,Apparel,30450.87,45,4.36
+42,FOOT-042,Premium Footwea Product 42,Footwear,1353.46,90,4.9
+43,HOME-043,Premium Home Appliance Product 43,Home Appliances,24226.27,168,4.51
+44,ELEC-044,Premium Electronic Product 44,Electronics,7783.14,101,4.49
+45,ELEC-045,Premium Electronic Product 45,Electronics,13966.49,134,4.48
+46,FOOT-046,Premium Footwea Product 46,Footwear,3997.88,59,4.49
+47,HOME-047,Premium Home Appliance Product 47,Home Appliances,34979.66,153,3.57
+48,BEAU-048,Premium Beaut Product 48,Beauty,34207.92,177,4.11
+49,HOME-049,Premium Home Appliance Product 49,Home Appliances,30515.02,114,4.67
+50,HOME-050,Premium Home Appliance Product 50,Home Appliances,19975.03,116,4.61

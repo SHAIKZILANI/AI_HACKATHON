@@ -12,10 +12,13 @@ const ActionBarChart = ({ data = {} }) => {
     labels: labels,
     datasets: [
       {
-        label: 'Recommended Interventions',
+        label: 'Dispatched Interventions',
         data: values,
-        backgroundColor: '#0284c7',
+        backgroundColor: '#3B82F6',
         borderRadius: 8,
+        borderWidth: 1,
+        borderColor: '#2563EB',
+        hoverBackgroundColor: '#2563EB'
       },
     ],
   };
@@ -23,25 +26,37 @@ const ActionBarChart = ({ data = {} }) => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    layout: {
+      padding: 16
+    },
     plugins: {
       legend: {
         display: false
+      },
+      tooltip: {
+        backgroundColor: '#111827',
+        titleColor: '#F8FAFC',
+        bodyColor: '#94A3B8',
+        borderColor: '#334155',
+        borderWidth: 1,
+        padding: 12,
+        cornerRadius: 8
       }
     },
     scales: {
       x: {
-        ticks: { color: '#94a3b8', font: { family: 'Inter', size: 11 } },
+        ticks: { color: '#94A3B8', font: { family: 'Inter', size: 12, weight: '500' } },
         grid: { display: false }
       },
       y: {
-        ticks: { color: '#94a3b8', font: { family: 'Inter', size: 11 } },
-        grid: { color: '#334155' }
+        ticks: { color: '#94A3B8', font: { family: 'Inter', size: 12, weight: '500' } },
+        grid: { color: '#334155', strokeDasharray: [4, 4] }
       }
     }
   };
 
   return (
-    <div className="h-64">
+    <div className="h-72 p-2">
       <Bar data={chartData} options={options} />
     </div>
   );
